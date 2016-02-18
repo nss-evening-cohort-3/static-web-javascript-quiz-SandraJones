@@ -1,70 +1,49 @@
-
-
-//in var build = [askHeight, askBuildChar];
-//var indeNum = function(console.log(" "));
-
-
-//var totIndenN = [function(n-1, n-2, n-3, n-4, n-5, n-6, n-7), ...];
-
-
-//calling the functions
-// askHeight();
-// askBuildChar();
-
-
-//looping through to build a tree
-// for (var i = 1; i <= n; i++) {
-//   if (i===1) {	
-//   	var placeholder = askheight-1;
-//   	(console.log(" "))*placeholder;
-//   	(console.log(char))*((2*i)-1);
-//   else {	
-//   	placeholder = placeholder--;
-//   	(console.log(" "))*placeholder;
-//     (console.log(char))*((2*i)-1);
-//   }
-// 	}
-// }
 var character = document.getElementById("character");
 var height = document.getElementById("height");
 var button = document.getElementById("btn");
 
-//  indeNum*(n-1);
-//}
-  //console.log((char)*1);
+function getValues() {
+  var x = character.value;
+  var y = height.value;
+  checkInput(x, y);
+}
+
 function tree() {
   console.log(character);
   console.log(height);
   console.log(btn);
-
 } 
-function checkInput() {
-  if(!char || !height) {
+
+function checkInput(x, y) {
+  tree();
+  if(!x || !y) {
     alert("All fields must be filled out."); 
     console.log("check input is running");
   } else {
-    treeObj= {
-    character: character.value,
-    height: height.value
-    }
+    buildObj(x, y);
     console.log("check input is running");
   }
 }
-  if BuildTree(treeObj) {
-      var h = treeObj.height;
-      var c = treeObj.character;
-      for (var i=1; i<=h; i++) {
-        if (i===1) {
-          var spaces  = h-1;
-          console.log(" ").repeat(spaces);
-          console.log(c).repeat((2*i)-1);
-        } else {
-          console.log(" ").repeat(spaces--);
-          console.log(c).repeat((2*i)-1);
-      }
+
+function buildObj(x, y) {
+    var treeObj= {
+    character: x,
+    height: y
     }
+    growTree(treeObj);
+  }  
+    
+function growTree(Obj) {    
+    var h = Obj.height;
+    var c = Obj.character;
+    for (var i=0; i<h; i++) {
+        var spaces  = h-1-i;
+        var numChar = (2 * i) + 1;
+        console.log(" ".repeat(spaces) + c.repeat(numChar));
+    }   
   }
-button.addEventListener("click", checkInput);
+
+button.addEventListener("click", getValues);
 
 
 
@@ -72,8 +51,12 @@ button.addEventListener("click", checkInput);
 
 
 
+//look at what happens if they hit enter when they are in the box
+//need another two listeners 
+//chk to see if it's a keyup
 
 
+add two listeners    ("keyup", someFunction)
 
 
 
