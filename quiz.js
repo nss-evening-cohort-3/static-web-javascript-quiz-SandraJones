@@ -46,25 +46,29 @@ function checkInput(x, y) {
 //and the up movement of the enter key when in
 //the height or character field 
 
-height.addEventListener("keyup", function(getValues) {
-  getValues.preventDefault();
-  if (getValues.keyCode == 13) {
-      height.click();
-   } else {
-      //wait for another event, such as a button click or 
-      //press enter in the character field
-   }
-});
+          // height.addEventListener("keyup", getValues); 
+          //   getValues.preventDefault();
+          //   if (getValues.keyCode === 13) {
+          //       height.getValues(y);
+          //    } else {
+          //       //wait for another event, such as a button click or 
+          //       //press enter in the character field
+          //    }
+          // };
+//to reset the input field:
+//var form = document.getElementById("myForm");
+//form.reset();
 
-character.addEventListener("keyup", function(getValues) {
-  getValues.preventDefault();
-  if (getValues.keyCode == 13) {
-      character.click();
-  }  else {
-    //wait for another event, such as a button click or 
-    //press enter in the character field
-  }
-});
+
+          // character.addEventListener("keyup", getValues);
+          //   getValues.preventDefault();
+          //   if (getValues.keyCode === 13) {
+          //       character.getValues(x);
+          //   }  else {
+          //     //wait for another event, such as a button click or 
+          //     //press enter in the character field
+          //   }
+          // };
 
 
 button.addEventListener("click", getValues);
@@ -74,37 +78,17 @@ button.addEventListener("click", getValues);
 //    then getVallues(); 
 //}
 
-//could also alert user to click on the button after inputting values into fields
+character.addEventListener("keyup", checkKeyPressed(x));
+function checkKeyPressed(x) {
+  (x.keyCode === 13); 
+  alert("Please click the button.");
+  }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+height.addEventListener("keyup", checkKeyPressed(y));
+function checkKeyPressed(y) {
+  (y.keyCode === 13); 
+  alert("Please click the button.");
+}
 
 
 
