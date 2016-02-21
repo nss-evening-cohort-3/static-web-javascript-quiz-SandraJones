@@ -1,6 +1,11 @@
 var character = document.getElementById("character");
 var height = document.getElementById("height");
 var button = document.getElementById("btn");
+
+function eraser() {
+  height.value = "";
+  character.value = "";
+}
 //capturing the input
 function getValues() {
   var x = character.value;//character element
@@ -21,7 +26,8 @@ function growTree(Obj) {
         var spaces  = h-1-i;
         var numChar = (2 * i) + 1;
         console.log(" ".repeat(spaces) + c.repeat(numChar));
-    }   
+    }
+    eraser();   
   }
 //building an object with two key value pairs
 function buildObj(x, y) {
@@ -78,13 +84,13 @@ button.addEventListener("click", getValues);
 //    then getVallues(); 
 //}
 
-character.addEventListener("keyup", checkKeyPressed(x));
+character.addEventListener("keyup", checkKeyPressed);
 function checkKeyPressed(x) {
   (x.keyCode === 13); 
   alert("Please click the button.");
   }
 
-height.addEventListener("keyup", checkKeyPressed(y));
+height.addEventListener("keyup", checkKeyPressed);
 function checkKeyPressed(y) {
   (y.keyCode === 13); 
   alert("Please click the button.");
