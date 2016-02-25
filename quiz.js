@@ -84,17 +84,15 @@ button.addEventListener("click", getValues);
 //    then getVallues(); 
 //}
 
-character.addEventListener("keyup", checkKeyPressed);
-function checkKeyPressed(x) {
-  (x.keyCode === 13); 
-  alert("Please click the button.");
+character.addEventListener("keyup", function (event) {
+  if (event.keyCode === 13) {
+    getValues();
   }
+});
 
-height.addEventListener("keyup", checkKeyPressed);
-function checkKeyPressed(y) {
-  (y.keyCode === 13); 
-  alert("Please click the button.");
-}
-
-
+height.addEventListener("keyup", function (event) {
+  if (event.keyCode === 13) {
+    getValues();
+  }
+});
 
